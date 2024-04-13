@@ -16,33 +16,35 @@ Hint: For subsets([1, 2, 3]), there are two kinds of subsets:
      subset that is the same, except it also does contain 3.
 ***********************************************************************/
 
+const subsets = (arr) => {
+  // debugger
+    if (arr.length === 0) {
+      return [[]];
+    }
+      let first = arr[0];
+      let variable = subsets(arr.slice(1))
+      
+      return variable.concat(variable.map(el => 
+          el.concat(first)
+      ))
+        
+      
+      // [[]].concat([arr])
+      // }
+    //  [[]].concat(arr)
+    //  return subsets(arr.slice(1))
+    }
+
 // const subsets = (arr) => {
-//   debugger
-//     if (arr.length === 0) {
-//       return [[]];
-//     } else {
-//      [[]].concat(arr)
-//      return subsets(arr.slice(1))
-//     }
+// if () {
+
 // }
 
+// else {
+// return subsets(arr)
+// }
 
-
-
-
-const subsets = (arr) => {
-if () {
-
-}
-
-else {
-return subsets(arr)
-}
-
-}
-
-
-
+// }
 
 // let array = [[]];
 // for (let el of arr) {
@@ -55,8 +57,8 @@ return subsets(arr)
 
 
 // console.log(subsets([])) // [[]]
-// console.log(subsets([1])) // [[], [1]]
-console.log(subsets([1, 2])) // [[], [1], [2], [1, 2]]
+console.log(subsets([1])) // [[], [1]]
+// console.log(subsets([1, 2])) // [[], [1], [2], [1, 2]]
 // subsets([1, 2, 3]) // [[], [1], [2], [1, 2], [3], [1, 3], [2, 3], [1, 2, 3]]
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
