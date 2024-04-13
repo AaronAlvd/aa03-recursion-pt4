@@ -33,29 +33,41 @@ let y = x.slice();
 console.log(x[0] === y[0]) // true
 ***********************************************************************/
 
+// let arr = [[1], [2, [3]]];
 
 // function deepDup(arr) {
-// if (arr.length === 0) {
-//   return [];
+// if (typeof arr === "object") {
+//   return arr;
 // }
-// else {
-//   return [arr.slice(0, 1)].concat(deepDup(arr.slice(1)))
+// else  {
+//   let first = arr[0]
+//   if (typeof first === "object") {
+
+
+//   }
+//   return 
+//   // return [arr.slice(0, 1)].concat(deepDup(arr.slice(1)))
 // }
 // }
-let arr = [[1], [2, [3]]];
+
 
 function deepDup(arr) {
-  console.log(arr.slice())
+  debugger
   if (typeof arr !== 'object') {
     return arr;
   }
-  //  else {
-  //   return deepDup(...arr)
-  // }
+let copy = Array.isArray(arr) ? [] : {};
+for (let key in arr) {
+  const value = arr[key];
+  copy[key] = deepDup(value);
+  }
+return copy;
 }
 
+
+let arr = [[1], [2, [3]]];
 const duped = deepDup(arr); // [[1], [2, [3]]]
-arr[0] === duped[0] // false
+console.log(arr[0] === duped[0]) // false
 arr[1] === duped[1] // false
 arr[1][1] === duped[1][1] // false
 
