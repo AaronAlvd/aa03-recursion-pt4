@@ -65,19 +65,36 @@ The call above should return the tree below:
 
 ***********************************************************************/
 
+// const makeTree = (categories, parent) => {
+// if (categories.length === 0) {
+// return parent
+// }
+// let obj = {};
+
+// let first = categories[0];
+// if (first.parent !== null ) {
+// obj[first.parent] = first.id
+
+// }
+// return makeTree(categories.slice(1), parent)
+
+// }
+
 const makeTree = (categories, parent) => {
-if (categories.length === 0) {
-return parent
-}
-let obj = {};
+    if (categories.length === 0) {
+        return {};
+    }
+    let obj = {};
 
-let first = categories[0];
-if (first.parent !== null ) {
-obj[first.parent] = first.id
-
-}
-return makeTree(categories.slice(1), parent)
-
+    for (let i = 0; i < categories.length; i++) {
+        let obj1 = categories[i];
+        if (categories.parent === null) {
+            let secondTier = categories.id
+           let first = obj[categories.parent] = {}
+           first[]
+        }
+    }
+    return makeTree(categories.slice(1), parent)
 }
 
 
