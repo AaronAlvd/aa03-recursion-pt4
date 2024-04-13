@@ -21,27 +21,23 @@ sort([0, 1, -3]); // [-3, 0, 1]
 sort([]); // []
 ***********************************************************************/
 
-// function sort(nums, sorted = []) {
-//     if (nums.length === 0) {
-//         return sorted;
-//     } else {
-//        let small = Math.min(...nums)
-//        return(sort(nums.splice(small, 1), sorted.concat(small)))
-//     }
-// }
+function sort(nums, sorted = []) {
+    if (nums.length === 0) {
+        return sorted;
+    } else {
+       let small = Math.min(...nums);
+       return(sort(nums.splice(small, 1), sorted.concat(small)))
+    }
+}
 
 // function sort(nums, sorted = []) {
 //     if (nums.length === 0) {
 //     return sorted;
-//     } else {
-
-    
-    
-    
+//     } else { 
 //     let small = Math.min(...nums)
 //     sorted.push(small);
-//     nums.splice(small, 1);
-//     // console.log(small, "nums:" + nums, "Sorted:" + sorted)
+//     let index = nums.indexOf(small)
+//     nums.splice(index, 1);
 //         return sort(nums, sorted)
 //     }
 

@@ -17,8 +17,13 @@ Hint: For subsets([1, 2, 3]), there are two kinds of subsets:
 ***********************************************************************/
 
 const subsets = (arr) => {
-  // Your code here 
+
 }
+
+subsets([]) // [[]]
+subsets([1]) // [[], [1]]
+// subsets([1, 2]) // [[], [1], [2], [1, 2]]
+// subsets([1, 2, 3]) // [[], [1], [2], [1, 2], [3], [1, 3], [2, 3], [1, 2, 3]]
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
