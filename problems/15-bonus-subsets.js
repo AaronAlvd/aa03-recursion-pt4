@@ -17,11 +17,17 @@ Hint: For subsets([1, 2, 3]), there are two kinds of subsets:
 ***********************************************************************/
 
 const subsets = (arr) => {
-
+  debugger
+    if (arr.length === 0) {
+      return [[]];
+    } else {
+     [[]].concat(arr)
+     return subsets(arr.slice(1))
+    }
 }
 
-subsets([]) // [[]]
-subsets([1]) // [[], [1]]
+// console.log(subsets([])) // [[]]
+console.log(subsets([1])) // [[], [1]]
 // subsets([1, 2]) // [[], [1], [2], [1, 2]]
 // subsets([1, 2, 3]) // [[], [1], [2], [1, 2], [3], [1, 3], [2, 3], [1, 2, 3]]
 
