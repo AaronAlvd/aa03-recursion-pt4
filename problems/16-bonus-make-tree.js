@@ -95,21 +95,17 @@ The call above should return the tree below:
 
 
 const makeTree = (categories, parent) => {
-    if (categories.length === 0) {
-        return {};
-    }
+    debugger;
     let obj = {};
 
-    for (let i = 0; i < categories.length; i++) {
-        let obj1 = categories[i];
-        if (categories.parent !== null) {
-            let secondTier = categories.id
-           let first = obj[categories.parent] = {}
-           first[]
-        }
+// We don't need a base case as .forEach is going to go through the whol array until the end.
+categories.forEach((category) => {
+    if (category.parent === parent) {
+        obj[category.id] = makeTree(categories, category.id)
     }
-    return makeTree(categories.slice(1), parent)
-}
+});     
+        return obj
+    }
 
 
 const categories1 = [
@@ -117,13 +113,16 @@ const categories1 = [
     { id: 'mammals', 'parent': 'animals' }
 ];
 
-const tree1 = makeTree(categories1, null);// -> 
+const tree1 = makeTree(categories1, null);
+
+// We should return a tree like this:
 
 // {
-//     animals: {
-//       mammals: {}
-//     }
+//   animals: {
+//     mammals: {}
 //   }
+// }
+
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 module.exports = makeTree;
 
