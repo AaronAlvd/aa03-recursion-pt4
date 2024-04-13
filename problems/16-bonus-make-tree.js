@@ -69,16 +69,30 @@ The call above should return the tree below:
 // if (categories.length === 0) {
 // return parent
 // }
-// let obj = {};
 
 // let first = categories[0];
 // if (first.parent !== null ) {
-// obj[first.parent] = first.id
+// parent[first.parent] = first.id
+
+// } else {
+//     parent[categories.id] = {};
+// }
+// // return makeTree(categories.slice(1), parent)
+// console.log(parent)
 
 // }
-// return makeTree(categories.slice(1), parent)
 
-// }
+// { id: 'animals', 'parent': null },
+// { id: 'mammals', 'parent': 'animals' },
+// { id: 'cats', 'parent': 'mammals' },
+
+
+
+
+
+
+
+
 
 const makeTree = (categories, parent) => {
     if (categories.length === 0) {
@@ -88,7 +102,7 @@ const makeTree = (categories, parent) => {
 
     for (let i = 0; i < categories.length; i++) {
         let obj1 = categories[i];
-        if (categories.parent === null) {
+        if (categories.parent !== null) {
             let secondTier = categories.id
            let first = obj[categories.parent] = {}
            first[]
