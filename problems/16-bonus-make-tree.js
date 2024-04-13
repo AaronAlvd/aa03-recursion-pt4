@@ -66,9 +66,33 @@ The call above should return the tree below:
 ***********************************************************************/
 
 const makeTree = (categories, parent) => {
-  // Your code here 
-};
+if (categories.length === 0) {
+return parent
+}
+let obj = {};
 
+let first = categories[0];
+if (first.parent !== null ) {
+obj[first.parent] = first.id
+
+}
+return makeTree(categories.slice(1), parent)
+
+}
+
+
+const categories1 = [
+    { id: 'animals', 'parent': null },
+    { id: 'mammals', 'parent': 'animals' }
+];
+
+const tree1 = makeTree(categories1, null);// -> 
+
+// {
+//     animals: {
+//       mammals: {}
+//     }
+//   }
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 module.exports = makeTree;
 
